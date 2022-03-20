@@ -1,0 +1,26 @@
+PROCEDURE sum(arr)
+VAR
+   i: INTEGER
+   S:INTEGER;= 0
+   arr : ARRAY_OF INTEGER[];
+BEGIN
+FOR i FROM 0 TO arr.length-1 STEP 1 DO 
+ S:+= arr[i]
+ALGORITHM datastructuresN_1
+VAR
+    i,j: INTEGER
+    arr1,arr2,newarr: ARRAY_OF INTEGER[];
+BEGIN
+    READ
+        FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+        FOR j FROM 0 TO arr2.length-1 STEP 1  DO
+        IF (arr1[i]=arr2[j]) THEN
+            push.newarr[arr[i]]
+        END_IF
+        END_FOR
+         END_FOR
+        result:=sum(newarr)
+    
+    WRITE
+   result   
+END

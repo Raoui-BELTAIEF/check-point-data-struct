@@ -1,0 +1,41 @@
+ALGORITHM htab_2
+VAR
+    htab : HASH_TABLE<INTEGER,INTEGER>;
+   arr1 : ARRAY_OF INTEGER[];
+   arr2 : ARRAY_OF INTEGER[];
+   j,i,count : INTEGER;
+  sum: INTEGER:=0;
+BEGIN
+ READ(arr1);
+ READ(arr2);
+FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+    IF (htab.lookup(arr1[i]=true)) THEN
+        count:=htab.get(arr1[i]);
+        htab.insert(arr1[i],count+1);
+        ELSE 
+        htab.insert(arr1[i],1);
+    END_IF
+END_FOR
+
+FOR j FROM 0 TO arr2.length-1 STEP 1  DO
+    IF (htab.lookup(arr2[j]=true)) THEN
+        count:=htab.get(arr2[j]);
+        htab.insert(arr2[j],count+1);
+        ELSE 
+        htab.insert(arr2[j],1);
+    END_IF
+END_FOR
+
+FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+    IF (htab.get(arr1[i]=2)) THEN
+       sum = sum+arr1[i];
+    END_IF
+END_FOR
+ WRITE(sum)
+FOR j FROM 0 TO arr2.length-1 STEP 1  DO
+    IF (htab.get(arr2[j]=2)) THEN
+       sum = sum+arr2[j];
+    END_IF
+END_FOR
+ WRITE(sum)
+END
